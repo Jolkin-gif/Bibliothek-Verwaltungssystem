@@ -10,7 +10,7 @@ namespace Bibliothek_Verwaltungssystem
     {
         public string Titel { get; set; }
         public string Autor { get; set; }
-        public string Status { get; set; } = "Verfügbar";
+        public string Status { get; set; } 
         public string Ausleiher { get; set; }
         public DateTime? Ausleihdatum { get; set; }
         public bool Verlängert { get; set; } = false;

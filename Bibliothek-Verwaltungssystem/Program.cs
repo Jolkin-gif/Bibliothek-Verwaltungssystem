@@ -11,6 +11,9 @@ namespace Bibliothek_Verwaltungssystem
     {
         static void Main(string[] args)
         {
+
+            Bibliothek methode = new Bibliothek();
+            methode.Laden();
             while (true)
             {
                 Console.WriteLine("---BIBLIOTHEKS-MANAGER---\n");
@@ -29,33 +32,22 @@ namespace Bibliothek_Verwaltungssystem
                 switch (eingabe)
                 {
                     case "1":
-                        Bibliothek.Anzeigen();
+                        methode.Anzeigen();
                         break;
                     case "2":
-                        Bibliothek.Hinzufügen();
+                        methode.Hinzufügen();
                         break;
                     case "3":
-                        Bibliothek.Entfernen();
+                        methode.Entfernen();
                         break;
-                    case "4":
-                        Bibliothek.Verloren();
-                        break;
-                    case "5":
-                        Bibliothek.Ausleihen();
-                        break;
-                    case "6":
-                        Bibliothek.Verlängern();
-                        break;
-                    case "7":
-                        Bibliothek.Rückgabe();
-                        break;
-                    case "8":
-                        Console.WriteLine("Programm wird beendet...");
-                        return;
-                    default:
-                        Console.WriteLine("Ungültige Eingabe. Bitte versuchen Sie es erneut.");
-                        break;
+
                 }
+
+                Console.WriteLine("\n Drücken Sie ENTER zurm Fortfahren.");
+                Console.ReadLine();
+                Console.Clear();
+
+
             }
         }
     }
