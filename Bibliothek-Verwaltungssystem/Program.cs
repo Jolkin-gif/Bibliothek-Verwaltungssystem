@@ -40,7 +40,25 @@ namespace Bibliothek_Verwaltungssystem
                     case "3":
                         methode.Entfernen();
                         break;
-
+                    case "4":
+                        methode.Verloren();
+                        break;
+                    case "5":
+                        methode.Ausleihen();
+                        break;
+                    case "6":
+                        methode.Verlängern();
+                        break;
+                    case "7":
+                        methode.Rückgabe();
+                        break;
+                    case "8":
+                        Console.WriteLine("Das Programm wird beendet.");
+                        return;
+                    default:
+                        Console.WriteLine("Ungültige Eingabe. Bitte versuchen Sie es erneut.");
+                        break;
+                    
                 }
 
                 Console.WriteLine("\n Drücken Sie ENTER zurm Fortfahren.");

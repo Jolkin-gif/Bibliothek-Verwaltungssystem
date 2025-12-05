@@ -10,7 +10,7 @@ namespace Bibliothek_Verwaltungssystem
     {
         public string Titel { get; set; }
         public string Autor { get; set; }
-        public string Status { get; set; } 
+        public string Status { get; set; }
         public string Ausleiher { get; set; }
         public DateTime? Ausleihdatum { get; set; }
         public bool Verlängert { get; set; } = false;
@@ -33,13 +33,19 @@ namespace Bibliothek_Verwaltungssystem
 
             TimeSpan differenz = DateTime.Now - Ausleihdatum.Value;
 
+            if (Verlängert)
+            {
+                if (differenz.TotalDays <= 44)
+                    return "VERLÄNGERT";
+
+                else
+                    return "ÜBERFÄLLIG";
+            }
+            
             if (differenz.TotalDays <= 30)
-                return "Grün";
-
-            if (Verlängert && differenz.TotalDays <= 44)
-                return "Gelb";
-
-            return "Rot";
+                return "AUSGELIEHEN";
+            else
+                return "ÜBERFÄLLIG";
 
 
 
