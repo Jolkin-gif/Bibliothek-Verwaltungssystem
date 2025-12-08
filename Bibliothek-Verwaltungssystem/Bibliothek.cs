@@ -36,13 +36,15 @@ namespace Bibliothek_Verwaltungssystem
         }
         public void Anzeigen()
         {
-            Console.WriteLine("---Alle Bücher---");
+            Console.WriteLine("\n---Alle Bücher---");
 
             foreach (Buch x in Bücher)
             {
                 string status = x.StatusFarbe();
 
-                Console.WriteLine(x.Titel + " von " + x.Autor + " | Status: ");
+                Console.WriteLine(x.Titel + " von " + x.Autor);
+                Console.Write("| Status: ");
+                
 
 
 
@@ -113,7 +115,7 @@ namespace Bibliothek_Verwaltungssystem
 
         public void Entfernen()
         {
-            Console.WriteLine("Welches Buch soll gelöscht werden?: ");
+            Console.WriteLine("\nWelches Buch soll gelöscht werden?: ");
             Anzeigen();
 
             string titel = Console.ReadLine();
@@ -135,7 +137,7 @@ namespace Bibliothek_Verwaltungssystem
 
         public void Verloren()
         {
-            Console.WriteLine("Welches Buch soll als verloren markiert werden?: ");
+            Console.WriteLine("\nWelches Buch soll als verloren markiert werden?: ");
             Anzeigen();
             string titel = Console.ReadLine();
 
@@ -154,7 +156,7 @@ namespace Bibliothek_Verwaltungssystem
         }
         public void Ausleihen()
         {
-            Console.WriteLine("Welches Buch soll ausgeliehen werden?:");
+            Console.WriteLine("\nWelches Buch soll ausgeliehen werden?:");
             Anzeigen();
 
             string titel = Console.ReadLine();
@@ -183,7 +185,7 @@ namespace Bibliothek_Verwaltungssystem
 
         public void Verlängern()
         {
-            Console.WriteLine("Welches ausgeliehene Buch soll verlängert werden?:");
+            Console.WriteLine("\nWelches ausgeliehene Buch soll verlängert werden?:");
             Anzeigen();
 
             string titel = Console.ReadLine();
@@ -218,7 +220,7 @@ namespace Bibliothek_Verwaltungssystem
 
         public void Rückgabe()
         {
-            Console.WriteLine("Welches Buch soll zurückgegeben werden?:");
+            Console.WriteLine("\nWelches Buch soll zurückgegeben werden?:");
             Anzeigen();
             string titel = Console.ReadLine();
             Buch buch = Bücher.FirstOrDefault(x => x.Titel == titel);
